@@ -7,10 +7,10 @@ Since I don't know how to change those flags my functional -if crude- way to sol
 
  1. Confirm that you have the required packages installed: ffmpeg, mediainfo
  2. Download spyro-fix.sh
- 3. If your game is not installed in the default Steam location you will have to edit the paths in the script (both targetdir and backupdir)
+ 3. If your game is not installed in the default Steam location you will have to edit the targetdir and backupdir paths in the script
  4. Optional: You can switch to any of the other included languages by editing the "language" number in the script (to get the number for another language, open Movies/C_Spyro01_Intro.mp4 with any media player and find the audio track you want. The index number you have to put in the script will be one lower than the the audiotrack's number). Or if someone wants to take the time to identify them all I will include a comment in the script with the list
  5. Make the file executable with chmod +x ./spyro-fix.sh
  6. Run spyro-fix.sh (it will take 10-20 minutes to create the new files)
 
 
-If you want to restore everything to the original conditions afterwards without any downloading required, simply delete the game's "Movies" folder and rename "Movies_backup" to "Movies"
+If you want to restore everything to the original conditions afterwards without any downloading required, simply delete the modified "Movies" folder and rename "Movies_backup" to "Movies"
