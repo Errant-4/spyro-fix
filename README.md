@@ -1,7 +1,7 @@
 # spyro-fix
 
 The Spyro Reignited trilogy runs well on Proton, except for the part where the pre-rendered cutscenes are completely skipped.
-And when you get them to play with custom proton (like the amazing Proton-GE), they will probably play in randomly selected languages. I thought this may be caused by the video files for the game containing a "Default" flag on every single audio track, but even when I re-encoded them with a single default track the game picked them at random. As such, my workaround for now is to create copies of the cutscene files with only the desired language's audio track. But since there are 30 video files to modify (mixed in with 40+ other non-speaking videos you have to sort through) and I might have to do it again later if I reinstall or Steam "repairs" the files, this script will make them for you automatically
+And when you get them to play with custom proton (like the amazing Proton-GE), they will probably play in randomly selected languages. I thought this may be caused by the video files for the game containing a "Default" flag on every single audio track, but even when I re-encoded them with a single default track the game picked them at random. As such, my workaround for now is to create copies of the cutscene files with only the desired language's audio track. But since there are 30 video files to modify (mixed in with 40+ other non-speaking videos you have to sort through) and I might have to edit them again later if I reinstall or Steam "repairs" the files, this script will make them for you automatically
 
 # Instructions
  1. Confirm that you have the required packages installed: ffmpeg, mediainfo
