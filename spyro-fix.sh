@@ -4,11 +4,19 @@ language=0
 targetdir="$HOME/.steam/steam/steamapps/common/Spyro Reignited Trilogy/Falcon/Content/Movies/"
 backupdir="$HOME/.steam/steam/steamapps/common/Spyro Reignited Trilogy/Falcon/Content/Movies_backup/"
 
-#Back up original files or delete current Movie folder if a backup directory is deteced
+# Create backup if there isn't one
 if [ ! -d "$backupdir" ]; then
 	mv "$targetdir" "$backupdir"
+# Delete target if backup is detected
+elif [ $(ls "$backupdir" -p | grep -v / | wc -l) == "77" ]; then
+	if [ -d "$targetdir" ]; then rm -r "$targetdir"; fi
+# If backup points to an empty directory create a new backup from target
+elif [ $(ls "$backupdir" -p | grep -v / | wc -l) == "0" ]; then
+	rm "$backupdir"
+	mv "$targetdir" "$backupdir"
 else
-	rm -r "$targetdir"
+	echo "Exiting most likely because an incorrect number of files was detected. If this was intentional then modify "77" to the correct number of files"
+	exit 0
 fi
 		
 mkdir "$targetdir"
