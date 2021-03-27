@@ -9,7 +9,7 @@ And when you get them to play with custom proton (like the amazing Proton-GE), t
  3. If your game is not installed in the default Steam location you will have to edit the targetdir and backupdir paths in the script
  4. Optional: You can switch to any of the other included languages by editing the "language" number in the script (to get the number for another language, open Movies/C_Spyro01_Intro.mp4 with any media player and find the audio track you want. The index number you have to put in the script will be one lower than the the audiotrack's number). Or if someone wants to take the time to identify them all, then I will include a comment in the script with the list
  5. Make the file executable with chmod +x ./spyro-fix.sh
- 6. Run spyro-fix.sh (it should take 10-20 minutes to create the new files)
+ 6. Run spyro-fix.sh
 
 
 If you want to restore everything to the original conditions afterwards without any downloading required, simply delete the modified "Movies" folder and rename "Movies_backup" to "Movies"
