@@ -1,7 +1,7 @@
 
 
 # FEEDBACK NEEDED
-If you ended up here by suggestion before trying, and not because you encountered the issue yourself, could you please go and try stock proton and without the fix first? It appears that the issue was fixed sometime mid 2021, but I would like confirmation from others 
+If you ended up here by suggestion before trying, and not because you encountered the issue yourself, could you please go and try stock proton (currently 6.3-6) without the fix, first? Either the issue was fixed sometime mid 2021, or I did something on my system that fixed it during a full system wipe.I would like confirmation from others 
 
 
 
