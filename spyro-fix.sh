@@ -6,11 +6,11 @@ backupdir="$HOME/.steam/steam/steamapps/common/Spyro Reignited Trilogy/Falcon/Co
 
 # Check if required packages are missing
 missing_req=0
-if ![ command -v ffmpeg &> /dev/null ]; then
+if ! command -v ffmpeg &> /dev/null; then
 	echo "Missing required package: ffmpeg"
 	missing_req=1
 fi
-if ![ command -v mediainfo &> /dev/null ]; then
+if ! command -v mediainfo &> /dev/null; then
 	echo "Missing required package: mediainfo"
 	missing_req=1
 fi
