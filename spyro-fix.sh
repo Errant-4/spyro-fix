@@ -4,6 +4,20 @@ language=0
 targetdir="$HOME/.steam/steam/steamapps/common/Spyro Reignited Trilogy/Falcon/Content/Movies/"
 backupdir="$HOME/.steam/steam/steamapps/common/Spyro Reignited Trilogy/Falcon/Content/Movies_backup/"
 
+# Check if required packages are missing
+missing_req=0
+if ! command -v ffmpeg &> /dev/null; then
+	echo "Missing required package: ffmpeg"
+	missing_req=1
+fi
+if ! command -v mediainfo &> /dev/null; then
+	echo "Missing required package: mediainfo"
+	missing_req=1
+fi
+if [ $missing_req -eq 1 ]; then
+	exit 127
+fi
+
 # Create backup if there isn't one
 if [ ! -d "$backupdir" ]; then
 	mv "$targetdir" "$backupdir"
