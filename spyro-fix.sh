@@ -1,5 +1,21 @@
 #! /bin/bash
 
+# Languages list
+# 0 : English
+# 1 : 
+# 2 : 
+# 3 : 
+# 4 : 
+# 5 : 
+# 6 : 
+# 7 : French
+# 8 : 
+# 9 : 
+# 10 : 
+# 11 : 
+# 12 : 
+# 13 : 
+
 language=0
 targetdir="$HOME/.steam/steam/steamapps/common/Spyro Reignited Trilogy/Falcon/Content/Movies/"
 backupdir="$HOME/.steam/steam/steamapps/common/Spyro Reignited Trilogy/Falcon/Content/Movies_backup/"
