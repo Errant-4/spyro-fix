@@ -2,35 +2,27 @@
 
 # Languages list
 # 0 : English
-# 1 : 
-# 2 : 
-# 3 : 
-# 4 : 
-# 5 : 
-# 6 : 
+# 1 :
+# 2 :
+# 3 :
+# 4 :
+# 5 :
+# 6 :
 # 7 : French
-# 8 : 
-# 9 : 
-# 10 : 
-# 11 : 
-# 12 : 
-# 13 : 
+# 8 : Italian
+# 9 :
+# 10 :
+# 11 :
+# 12 :
+# 13 :
 
 language=0
 targetdir="$HOME/.steam/steam/steamapps/common/Spyro Reignited Trilogy/Falcon/Content/Movies/"
 backupdir="$HOME/.steam/steam/steamapps/common/Spyro Reignited Trilogy/Falcon/Content/Movies_backup/"
 
 # Check if required packages are missing
-missing_req=0
 if ! command -v ffmpeg &> /dev/null; then
 	echo "Missing required package: ffmpeg"
-	missing_req=1
-fi
-if ! command -v mediainfo &> /dev/null; then
-	echo "Missing required package: mediainfo"
-	missing_req=1
-fi
-if [ $missing_req -eq 1 ]; then
 	exit 127
 fi
 
@@ -48,14 +40,14 @@ else
 	echo "Exiting most likely because an incorrect number of files was detected. If this was intentional then modify "77" to the correct number of files"
 	exit 0
 fi
-		
+
 mkdir "$targetdir"
 
 for file in "${backupdir}"*
 do
-	if mediainfo --output=XML "$file" | grep -q "<ID>4</ID>"; then
+	if ffprobe -v error -hide_banner -print_format csv -select_streams a -show_entries stream=index "$file" | grep -q "stream,1"; then
 		ffmpeg -loglevel error -stats -i "$file" -map 0:a:"$language" -map 0:v:0 -c:a copy -c:v copy "${file/$backupdir/$targetdir}"
-	else 
+	else
 		cp "$file" "${file/$backupdir/$targetdir}"
 	fi
 done
