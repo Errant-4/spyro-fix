@@ -45,7 +45,9 @@ mkdir "$targetdir"
 
 for file in "${backupdir}"*
 do
-	if ffprobe -v error -hide_banner -print_format csv -select_streams a -show_entries stream=index "$file" | grep -q "stream,1"; then
+	stream_exists=$(ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$file" | wc -l)
+
+	if [ "$stream_exists" -gt "$language" ]; then
 		ffmpeg -loglevel error -stats -i "$file" -map 0:a:"$language" -map 0:v:0 -c:a copy -c:v copy "${file/$backupdir/$targetdir}"
 	else
 		cp "$file" "${file/$backupdir/$targetdir}"
